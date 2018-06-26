@@ -37,7 +37,7 @@ $tripReports->closeCursor();
     <p><a href="add_report_form.php">Add Report</a></p>
     
     
-    <secction>
+    <section>
         <!--display a table of trip reports -->
         <table>
             <tr>
@@ -60,7 +60,7 @@ $tripReports->closeCursor();
             </tr>
             <?php endforeach; ?>
         </table>
-    </secction>
+    </section>
 </main>    
 </body>
 </html>

@@ -21,6 +21,7 @@ function is_valid_admin_login($username, $password) {
 
 if (is_valid_admin_login($username, $password)) {
     include('index.php');
+    $query = 'SELECT '
 } else {
     include('login_form.php');
 }
