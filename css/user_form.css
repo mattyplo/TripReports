@@ -1,0 +1,85 @@
+form * {
+	background: transparent;
+}
+
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border: none;
+	background: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 0;
+}
+
+.group:before, .group:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.group:after { clear: both; }  
+.group { zoom: 1; } 
+
+form {
+	width: 300px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+label {
+	display: block;
+	width: 250px;
+	margin: 0 auto;
+	font-weight: bold;
+	color: #777;
+	padding-top: 15px;
+}
+
+input[type=text], input[type=password], input[type=email]{
+
+	display: block;
+	width: 250px;
+	margin: 0 auto;
+	padding: 5px;
+	background: #EEE;
+	border: 1px solid #FFF;
+	font-family: sans-serif;
+	font-size: 16px;
+	color: #666;
+
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+
+	background: -webkit-linear-gradient(#FFF,#DDD);
+	background: -moz-linear-gradient(#FFF,#DDD);
+	background: -o-linear-gradient(#FFF,#DDD);
+	background: linear-gradient(#FFF,#DDD);
+    -pie-background: linear-gradient(#FFF, #DDD);
+
+	-webkit-box-shadow: inset 0px 2px 3px #666,inset 0px -5px 3px #EEE;
+	-moz-box-shadow: inset 0px 2px 3px #666,inset 0px -5px 3px #EEE;
+	box-shadow: inset 0px 2px 3px #666,inset 0px -5px 3px #EEE;
+}
+
+input[type=submit] {
+	padding: 5px;
+	background: #666;
+	color:white;
+	border:none;
+	float: right;
+	margin-right: 12px;
+	margin-top: 10px;
+
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+
+}
+
+input:focus, textarea:focus {
+	outline: solid red;
+}
+
+label:hover input[type=text], input[type=password]:hover, input[type=email]:hover {
+	outline: solid orange;
+}

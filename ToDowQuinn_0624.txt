@@ -1,0 +1,3 @@
+-  Login Page
+-  use session id / login to display users name on all pages
+-  use session id so user can review changes made and reports added in a particular session.  
