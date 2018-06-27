@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once('database.php');
 
@@ -20,10 +21,22 @@ function is_valid_admin_login($username, $password) {
 }
 
 if (is_valid_admin_login($username, $password)) {
+    $_SESSION['loggedIn'] = TRUE;
+    $_SESSION['username'] = $username;
+    
+    $query = 'SELECT UserFirstName, UserLastName FROM Users WHERE UserUserName = :username';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':username', $username);
+    $statement->execute();
+    $row = $statement->fetch();
+    $statement->closeCursor();
+
+    $_SESSION['firstName'] = $row['UserFirstName'];
+    $_SESSION['lastName'] = $row['UserLastName'];
     include('index.php');
-    $query = 'SELECT '
 } else {
     include('login_form.php');
 }
 
+>>>>>>> ce0574a0a1d59ada00812cfc93175220b86f6386
 ?>

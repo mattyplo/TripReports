@@ -1,13 +1,16 @@
 <?php
+//session_start();
 
 $lifetime = 60 * 60 * 24 * 365;                     
 session_set_cookie_params($lifetime, '/');
-session_start();
 
 require_once('database.php');
 $session_name = session_name();
-
-
+if(isset($_SESSION['loggedIn'])){
+    $username = $_SESSION['username'];
+    $firstName = $_SESSION['firstName'];
+    $lastName = $_SESSION['lastName'];
+}
 //Get trip reports
 $queryAllTripReports = 'SELECT * FROM TripReport';
 $tripReports = $db->prepare($queryAllTripReports);
@@ -15,6 +18,7 @@ $tripReports->execute();
 $reports = $tripReports->fetchAll();
 $tripReports->closeCursor();
     
+
 
 ?>
 
@@ -31,13 +35,21 @@ $tripReports->closeCursor();
     <!--a test to see that the session is working! 
     <h2><?php echo $session_name; ?></h2>
     -->
-    
+
+    <?php
+    if(isset($_SESSION['loggedIn'])){
+        echo "Welcome ", $username, " ", $firstName, " ", $lastName;
+    } else {
+        echo "Welcome!";
+    }
+    ?>
+
     <p><a href="login_form.php">Login</a></p>
     <p><a href="create_user_form.php">Create User</a></p>
     <p><a href="add_report_form.php">Add Report</a></p>
     
     
-    <section>
+    <secction>
         <!--display a table of trip reports -->
         <table>
             <tr>
@@ -60,8 +72,9 @@ $tripReports->closeCursor();
             </tr>
             <?php endforeach; ?>
         </table>
-    </section>
+    </secction>
 </main>    
 </body>
 </html>
+>>>>>>> ce0574a0a1d59ada00812cfc93175220b86f6386
 <!--display a table of trip reports -->
