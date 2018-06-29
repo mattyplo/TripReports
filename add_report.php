@@ -1,4 +1,5 @@
 <?php
+
 // Get the trip data
 $trip_name = filter_input(INPUT_POST, 'trip_name');
 $mileage = filter_input(INPUT_POST, 'mileage', FILTER_VALIDATE_FLOAT);
@@ -30,4 +31,5 @@ if ($trip_name == null || $mileage == null || $mileage == false || $date == null
     // Display the Trip Report page
     include('index.php');
 }
+
 ?>

@@ -1,0 +1,105 @@
+[1mdiff --git a/index.php b/index.php[m
+[1mindex 0374d91..6c0419e 100644[m
+[1m--- a/index.php[m
+[1m+++ b/index.php[m
+[36m@@ -1,17 +1,13 @@[m
+[31m-[m
+ <?php[m
+[31m-//session_start();[m
+ [m
+ $lifetime = 60 * 60 * 24 * 365;                     [m
+ session_set_cookie_params($lifetime, '/');[m
+[32m+[m[32msession_start();[m
+ [m
+ require_once('database.php');[m
+ $session_name = session_name();[m
+[31m-if(isset($_SESSION['loggedIn'])){[m
+[31m-    $username = $_SESSION['username'];[m
+[31m-    $firstName = $_SESSION['firstName'];[m
+[31m-    $lastName = $_SESSION['lastName'];[m
+[31m-}[m
+[32m+[m
+[32m+[m
+ //Get trip reports[m
+ $queryAllTripReports = 'SELECT * FROM TripReport';[m
+ $tripReports = $db->prepare($queryAllTripReports);[m
+[36m@@ -20,7 +16,6 @@[m [m$reports = $tripReports->fetchAll();[m
+ $tripReports->closeCursor();[m
+     [m
+ [m
+[31m-[m
+ ?>[m
+ [m
+ <!DOCTYPE html>[m
+[36m@@ -36,21 +31,13 @@[m [m$tripReports->closeCursor();[m
+     <!--a test to see that the session is working! [m
+     <h2><?php echo $session_name; ?></h2>[m
+     -->[m
+[31m-[m
+[31m-    <?php[m
+[31m-    if(isset($_SESSION['loggedIn'])){[m
+[31m-        echo "Welcome ", $username, " ", $firstName, " ", $lastName;[m
+[31m-    } else {[m
+[31m-        echo "Welcome!";[m
+[31m-    }[m
+[31m-    ?>[m
+[31m-[m
+[32m+[m[41m    [m
+     <p><a href="login_form.php">Login</a></p>[m
+     <p><a href="create_user_form.php">Create User</a></p>[m
+     <p><a href="add_report_form.php">Add Report</a></p>[m
+     [m
+     [m
+[31m-    <secction>[m
+[32m+[m[32m    <section>[m
+         <!--display a table of trip reports -->[m
+         <table>[m
+             <tr>[m
+[36m@@ -73,9 +60,8 @@[m [m$tripReports->closeCursor();[m
+             </tr>[m
+             <?php endforeach; ?>[m
+         </table>[m
+[31m-    </secction>[m
+[32m+[m[32m    </section>[m
+ </main>    [m
+ </body>[m
+ </html>[m
+[31m->>>>>>> ce0574a0a1d59ada00812cfc93175220b86f6386[m
+ <!--display a table of trip reports -->[m
+\ No newline at end of file[m
+[1mdiff --git a/login.php b/login.php[m
+[1mindex bb61f01..a6a3c93 100644[m
+[1m--- a/login.php[m
+[1m+++ b/login.php[m
+[36m@@ -1,6 +1,4 @@[m
+[31m-[m
+ <?php[m
+[31m-session_start();[m
+ [m
+ require_once('database.php');[m
+ [m
+[36m@@ -22,22 +20,10 @@[m [mfunction is_valid_admin_login($username, $password) {[m
+ }[m
+ [m
+ if (is_valid_admin_login($username, $password)) {[m
+[31m-    $_SESSION['loggedIn'] = TRUE;[m
+[31m-    $_SESSION['username'] = $username;[m
+[31m-    [m
+[31m-    $query = 'SELECT UserFirstName, UserLastName FROM Users WHERE UserUserName = :username';[m
+[31m-    $statement = $db->prepare($query);[m
+[31m-    $statement->bindValue(':username', $username);[m
+[31m-    $statement->execute();[m
+[31m-    $row = $statement->fetch();[m
+[31m-    $statement->closeCursor();[m
+[31m-[m
+[31m-    $_SESSION['firstName'] = $row['UserFirstName'];[m
+[31m-    $_SESSION['lastName'] = $row['UserLastName'];[m
+     include('index.php');[m
+[32m+[m[32m    $query = 'SELECT '[m
+ } else {[m
+     include('login_form.php');[m
+ }[m
+ [m
+[31m->>>>>>> ce0574a0a1d59ada00812cfc93175220b86f6386[m
+ ?>[m
+\ No newline at end of file[m
