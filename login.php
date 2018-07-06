@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('database.php');
 
 $username = filter_input(INPUT_POST, 'username');
@@ -36,6 +36,4 @@ if (is_valid_admin_login($username, $password)) {
 } else {
     include('login_form.php');
 }
-
->>>>>>> ce0574a0a1d59ada00812cfc93175220b86f6386
 ?>

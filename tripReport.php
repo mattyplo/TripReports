@@ -13,7 +13,7 @@
     -->
 
     <?php
-    if(isset($_SESSION['loggedIn'])){
+    if($_SESSION['loggedIn'] == true){
         echo "Welcome ", $username, " ", $firstName, " ", $lastName;
     } else {
         echo "Welcome!";
@@ -23,6 +23,7 @@
     <p><a href=".?action=login">Login</a></p>
     <p><a href=".?action=create_user">Create User</a></p>
     <p><a href=".?action=add_report">Add Report</a></p>
+    <p><a href=".?action=end_session">Clear and end session</a></p>
     
     
     <secction>

@@ -1,5 +1,7 @@
 <?php
 
+require_once('database.php');
+
 // Get the trip data
 $trip_name = filter_input(INPUT_POST, 'trip_name');
 $mileage = filter_input(INPUT_POST, 'mileage', FILTER_VALIDATE_FLOAT);
@@ -10,9 +12,10 @@ $report = filter_input(INPUT_POST, 'report');
 //validate inputs
 if ($trip_name == null || $mileage == null || $mileage == false || $date == null || $location == null || $report == null) {
     $error_message = "invalide report data.  check all fields and try again.";
-    include('database_error.php');
+    include('../database_error.php');
 } else {
-    require_once('database.php');
+    
+    $db = Database::getDB();
     
     // Add the trip to the database
     $query = 'INSERT INTO TripReport 
@@ -29,7 +32,7 @@ if ($trip_name == null || $mileage == null || $mileage == false || $date == null
     $statement->closeCursor();
     
     // Display the Trip Report page
-    include('index.php');
+    include('../tripReport.php');
 }
 
 ?>

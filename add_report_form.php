@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +11,7 @@
 <body>
     <main>
         <h1>Add Report</h1>
-        <form action="add_report.php" method="post" id="add_report_form">
+        <form action="model/add_report.php" method="post" id="add_report_form">
             
             <label>Trip Name:</label>
             <input type="text" name="trip_name"><br>

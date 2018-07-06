@@ -1,18 +1,24 @@
 <?php
 //session_start();
-
+if(!isset($_SESSION)) 
+    { 
+        $lifetime = 60 * 60 * 24 * 365;  
+        session_start(); 
+        session_set_cookie_params($lifetime, '/');
+        $_SESSION['loggedIn'] = false; 
+    } 
 $lifetime = 60 * 60 * 24 * 365;                     
-session_set_cookie_params($lifetime, '/');
-session_start();
-require_once('database.php');
+
+require_once('model/database.php');
 $session_name = session_name();
-if(isset($_SESSION['loggedIn'])){
+if($_SESSION['loggedIn'] == true){
     $username = $_SESSION['username'];
     $firstName = $_SESSION['firstName'];
     $lastName = $_SESSION['lastName'];
 }
 //Get trip reports
 $queryAllTripReports = 'SELECT * FROM TripReport';
+$db = Database::getDB();
 $tripReports = $db->prepare($queryAllTripReports);
 $tripReports->execute();
 $reports = $tripReports->fetchAll();
@@ -38,7 +44,26 @@ switch($action) {
         include('create_user_form.php');
         break;
     case 'add_report':
-        include('add_report_form.php');
+        include('report.php');
+        break;
+    case 'end_session':
+        // Clear session data from memory
+        $_SESSION = array();
+        
+        // Clean up session ID
+        session_destroy();
+        
+        // Delete the cookie for the session
+        $name = session_name();
+        $expire = strtotime('-1 year');
+        $params = session_get_cookie_params();
+        $path = $params['path'];
+        $domain = $params['domain'];
+        $secure = $params['secure'];
+        $httponly = $params['httponly'];
+        setcookie($name, '', $expire, $path, $domain, $secure, $httponly);
+        
+        include('tripReport.php');
         break;
 }
 ?>
