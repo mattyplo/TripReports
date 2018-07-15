@@ -34,7 +34,12 @@ switch($action) {
         include('create_user_form.php');
         break;
     case 'add_report':
-        header("Location: add_report_form.php");
-        break;
+        if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == TRUE) {
+            header("Location: add_report_form.php");
+            break;
+        } else {
+            header("Location: login_form.php");
+            break;
+        }
 }
 ?>

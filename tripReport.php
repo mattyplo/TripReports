@@ -13,7 +13,7 @@
     -->
 
     <?php
-    if($_SESSION['loggedIn'] == true){
+    if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true){
         echo $_SESSION['username'];
     } else {
         echo "Welcome!";
