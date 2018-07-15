@@ -28,7 +28,7 @@ switch($action) {
         include('tripReport.php');
         break;
     case 'login':
-        include('login_form.php');
+        header('Location: login_form.php');
         break;
     case 'create_user':
         include('create_user_form.php');
