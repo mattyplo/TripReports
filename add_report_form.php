@@ -1,3 +1,8 @@
+<?php
+session_start();
+$username = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,6 +14,7 @@
 <body>
     <main>
         <h1>Add Report</h1>
+        <h2><?php echo $_SESSION['username']; ?></h2>
         <form action="add_report.php" method="post" id="add_report_form">
             
             <label>Trip Name:</label>

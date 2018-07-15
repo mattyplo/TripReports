@@ -6,11 +6,7 @@ session_set_cookie_params($lifetime, '/');
 session_start();
 require_once('database.php');
 $session_name = session_name();
-if(isset($_SESSION['loggedIn'])){
-    $username = $_SESSION['username'];
-    $firstName = $_SESSION['firstName'];
-    $lastName = $_SESSION['lastName'];
-}
+
 //Get trip reports
 $queryAllTripReports = 'SELECT * FROM TripReport';
 $tripReports = $db->prepare($queryAllTripReports);
@@ -38,8 +34,7 @@ switch($action) {
         include('create_user_form.php');
         break;
     case 'add_report':
-        include('add_report_form.php');
+        header("Location: add_report_form.php");
         break;
 }
 ?>
-

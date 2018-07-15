@@ -13,8 +13,8 @@
     -->
 
     <?php
-    if(isset($_SESSION['loggedIn'])){
-        echo "Welcome ", $username, " ", $firstName, " ", $lastName;
+    if($_SESSION['loggedIn'] == true){
+        echo $_SESSION['username'];
     } else {
         echo "Welcome!";
     }
