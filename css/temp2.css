@@ -1,0 +1,72 @@
+html {
+    background-color: azure;
+}
+
+div.wrapper {
+    background-color:#fff;
+    overflow: auto;
+}
+
+header {
+    text-align: center;
+}
+
+h1>a {
+    text-decoration: none;
+    color: #000;
+}
+
+h2 {
+    padding: 10px;
+}
+
+p {
+    padding: 10px;
+    line-height: 1.25;
+}
+
+footer {
+    clear: both;
+}
+
+
+/* START RESPONSIVE STYLES */
+
+/* DESKTOP */
+@media all and (min-width: 1000px) {
+    div.wrapper {
+        width: 80%;
+        margin: auto;
+    }
+    
+    section {
+        width: 95%;
+        margin: auto;
+    }
+    
+    ul.topnav li a.selected {
+        background-color: darkseagreen;
+        color: chartreuse;
+    }
+}
+
+
+/* TABLET */
+@media all and (min-width: 551px) and (max-width: 999px) {
+    
+    div.wrapper {
+        width: 92%;
+        margin: auto;
+    }
+    
+    section {
+        width: 96%;
+        margin: auto;
+    }
+}
+
+
+/*  PHONE  */
+@media all and (max-width: 550px) {
+    
+}
