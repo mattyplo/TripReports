@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>Trip Reports</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/user_form.css">
-</head>
-
-<body>
     <main>
         <h1>Create User</h1>
         <form action="create_user.php" method="post" id="create_user_form" class="group">
@@ -43,7 +34,4 @@
         </form>
         <p><a href="index.php">View Trip Reports</a></p>
     </main>
-    
-</body>
-    
-</html>
+ 

@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Trip Reports</title>
-    <link rel="stylesheet" href="css/main.css" />
-</head>
+<?php
+include('includes/header.php');
+
+//Get trip reports
+$queryAllTripReports = 'SELECT * FROM TripReport';
+$tripReports = $db->prepare($queryAllTripReports);
+$tripReports->execute();
+$reports = $tripReports->fetchAll();
+$tripReports->closeCursor();
+?>
+
+
     
-<body>
+
 <main>
     <h1>Trip Reports</h1>
     <!--a test to see that the session is working! 
@@ -20,9 +26,6 @@
     }
     ?>
 
-    <p><a href=".?action=login">Login</a></p>
-    <p><a href=".?action=create_user">Create User</a></p>
-    <p><a href=".?action=add_report">Add Report</a></p>
     
     
     <secction>
@@ -50,5 +53,3 @@
         </table>
     </secction>
 </main>    
-</body>
-</html>

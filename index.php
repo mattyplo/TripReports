@@ -1,45 +1,6 @@
-<?php
-//session_start();
-
-$lifetime = 60 * 60 * 24 * 365;                     
-session_set_cookie_params($lifetime, '/');
-session_start();
-require_once('database.php');
-$session_name = session_name();
-
-//Get trip reports
-$queryAllTripReports = 'SELECT * FROM TripReport';
-$tripReports = $db->prepare($queryAllTripReports);
-$tripReports->execute();
-$reports = $tripReports->fetchAll();
-$tripReports->closeCursor();
+<?php include('includes/header.php'); ?>
     
-// switch between various pages and actions
-$action = filter_input(INPUT_POST, 'action');
-if ($action === NULL) {
-    $action = filter_input(INPUT_GET, 'action');
-    if ($action === NULL) {
-        $action = 'reports';
-    }
-}
-
-switch($action) {
-    case 'reports':
-        include('tripReport.php');
-        break;
-    case 'login':
-        header('Location: login_form.php');
-        break;
-    case 'create_user':
-        include('create_user_form.php');
-        break;
-    case 'add_report':
-        if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == TRUE) {
-            header("Location: add_report_form.php");
-            break;
-        } else {
-            header("Location: login_form.php");
-            break;
-        }
-}
-?>
+  <p>Welcome to Trip Reports.  This site is available so one can check out the latest trip reports on hikes the world over.  If you are a user you can log trip reports.  If you aren't a user you can sign up free to enjoy the full extent of this site's offerings!
+  </p>
+    
+<?php include('includes/footer.php'); ?>

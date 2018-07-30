@@ -2,6 +2,13 @@
 
 define('THIS_PAGE',basename($_SERVER['PHP_SELF']));
 
+require_once("database.php");
+require_once("functions.php");
+
+if(!isset($_SESSION)) {
+  session_start();
+}
+
 switch (THIS_PAGE) {
         
     case'index.php';
@@ -35,10 +42,10 @@ switch (THIS_PAGE) {
 }
 
 $nav1['index.php'] = "Welcome";
-$nav1['tripReports.php'] = "Trip Reports";
-$nav1['writeReport.php'] = "Write a Report";
-$nav1['createUser.php'] = "Create User Account";
-$nav1['logIn.php'] = "Log in";
+$nav1['tripReport.php'] = "Trip Reports";
+$nav1['add_report.php'] = "Write a Report";
+$nav1['create_user.php'] = "Create User Account";
+$nav1['login.php'] = "Log in";
 
 function makeLinks($nav1) {
     

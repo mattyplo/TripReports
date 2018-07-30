@@ -1,17 +1,12 @@
 <?php
-session_start();
+
 $username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Trip Reports</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
 
-<body>
     <main>
         <h1>Add Report</h1>
         <h2><?php echo $_SESSION['username']; ?></h2>
@@ -39,6 +34,3 @@ $username = $_SESSION['username'];
         <p><a href="index.php">View Trip Reports</a></p>
     </main>
     
-</body>
-    
-</html>

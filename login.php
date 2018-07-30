@@ -1,6 +1,5 @@
 <?php
-include('functions.php');
-require_once('database.php');
+include('includes/header.php');
 
 $username = filter_input(INPUT_POST, 'username');
 $password = filter_input(INPUT_POST, 'password');

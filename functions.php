@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+function is_post_request() {
+  return $_SERVER['REQUEST_METHOD'] == 'POST';
+}
 
 function is_valid_admin_login($username, $password) {
     global $db;
