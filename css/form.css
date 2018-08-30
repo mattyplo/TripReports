@@ -1,0 +1,199 @@
+
+/* Form Styles */
+
+form#add_report_form {
+    max-width: 800px;
+    padding: 15px;
+    background: #5890d0 url(../images/create_report_background.jpg) no-repeat 0px -165px;
+}
+
+form#add_report_form h2 {
+    margin: 0px; 
+    color: #fff;
+    font-size: 2em;
+}
+
+form#add_report_form h1 {
+    margin: 0px; color: #fff;
+    font-size: 2.5em;
+} 
+
+form#add_report_form label {
+    margin: 0px 0px 6px 0px;
+    color: rgba(255, 255, 255, .8);
+}
+
+form#add_report_form fieldset {
+    border: 1px solid rgba(255,255,255,.4);
+    margin: 15px 0px 15px 0px;
+    padding: 0px 10px 10px 20px;
+}
+
+form#add_report_form legend {
+    color: #254581;
+    font-size: .9em;
+}
+
+form#add_report_form input {
+    font-size: .9em;
+    background: rgba(255,255,255,.8);
+    background-size:30px 17px;
+    padding: 5px 0px 6px 47px;
+    margin: 0px 0px 12px 0px;
+    border: none;
+    color: #264581;
+    width: 25%;
+}
+
+form#add_report_form input:focus {
+    background-color: #fff;
+}
+
+textarea {
+    font-size: .9em;
+    padding: 5px;
+    border: none;
+    color: #264581;
+    background-color: rgba(255,255,255,.8);
+    width: 80%;
+}
+
+textarea:focus {
+    background-color: #fff;
+}
+
+form#add_report_form input[type=submit] {
+    font-size: .9em;
+    color: #fff;
+    border: none;
+    background-color: #264581;
+    margin: 10px 0px 5px 0px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+form#add_report_form input[type=submit]:hover {
+    color: #ffd34c;
+}
+
+/* Create new User Form Styles */
+main#create_user {
+    background: url(../images/new_user_background.jpg);
+}
+
+#create_user h1 {
+    text-align: center;
+    font-size: 27px;
+    color: #CF423C;
+    margin: 0px;
+    margin-bottom: 3px;
+}
+
+#create_user form {
+    width: 340px;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+    
+    
+}
+/* End Create new User Form Styles */
+
+/* Login Form Styles */
+
+
+#login_form input[type=text], input[type=password], input[type=submit],textarea, button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border: none;
+	background: white;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 0;
+	margin-bottom: 10px;
+	color: #404030;
+}
+
+main#login_form {
+	background: url(../images/login_form_background.jpg) no-repeat 0px -85px;
+}
+
+#offset_space {
+    /* hack to adjust image height to that of the form offset */
+    height: 200px;
+}
+
+#login_form h1 {
+	text-align: center;
+	font-size: 27px;
+	color: #404030;
+	margin: 0px;
+	margin-bottom: 3px;
+}
+
+#login_form form {
+	width: 340px;
+	margin: 0 auto;
+	position: relative;
+	top:50px;
+	
+	background: #;
+	background: #92A8DE -webkit-linear-gradient(#92A8DE,#AECFF2);
+	background: #92A8DE -moz-linear-gradient(#92A8DE,#AECFF2);
+	background: #92A8DE -o-linear-gradient(#92A8DE,#AECFF2);
+	background: #92A8DE -ms-linear-gradient(#92A8DE,#AECFF2);
+	background: #92A8DE linear-gradient(#92A8DE,#AECFF2);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#AECFF2', endColorstr='#92A8DE',GradientType=0 );
+	border: 1px solid #92A8DE;
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	-webkit-box-shadow: 5px 5px 11px rgba(0,0,0,0.42);
+	-moz-box-shadow: 5px 5px 11px rgba(0,0,0,0.42);
+	box-shadow: 5px 5px 11px rgba(0,0,0,0.42);
+	padding: 15px 30px 10px 30px;
+}
+
+#login_form button {
+	font-size: 13px;
+	width: 90px;
+	text-align: center;
+	display: block;
+	float: right;
+	clear: both;
+	background: #C9B2A7;
+	padding: 6px 28px;
+	border: none;
+
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	color: #404030;
+}
+
+#login_form .group:before, .group:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.group:after { clear: both; }  
+.group { zoom: 1; } 
+
+#login_form label {
+	display: block;
+	font-size: 13px;
+	color: #404030;
+	padding: 5px;
+}
+
+#login_form input[type=text],input[type=password] {
+	width: 330px;
+	border: 1px solid #404030;
+}
+
+#login_form input[type=text]:focus,input[type=password]:focus {
+	background: #DDD;
+}
+

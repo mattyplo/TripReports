@@ -23,10 +23,12 @@ if (is_valid_admin_login($username, $password)) {
     $lastName = $row['UserLastName'];
     $_SESSION['firstName'] = $row['UserFirstName'];
     $_SESSION['lastName'] = $row['UserLastName'];
-    header('Location: index.php');
+    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';    
+exit;
 } else {
     include('login_form.php');
 }
 
+include('includes/footer.php');
 
 ?>

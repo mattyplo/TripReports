@@ -8,6 +8,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/temp.css" />
 <link rel="stylesheet" href="css/temp2.css" />
+<link rel="stylesheet" href="css/form.css" />
 </head>
     
 <body>

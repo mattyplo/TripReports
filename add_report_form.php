@@ -8,10 +8,14 @@ $username = $_SESSION['username'];
 
 
     <main>
+        <form action="add_report.php" method="post" id="add_report_form">
+        
         <h1>Add Report</h1>
         <h2><?php echo $_SESSION['username']; ?></h2>
-        <form action="add_report.php" method="post" id="add_report_form">
-            
+        
+          <fieldset>  
+            <legend>Trip Report</legend>  
+              
             <label>Trip Name:</label>
             <input type="text" name="trip_name"><br>
             
@@ -25,11 +29,11 @@ $username = $_SESSION['username'];
             <input type="text" name="location"><br>
             
             <label>Report:</label>
-            <input type="text" name="report"><br>
+            <textarea name="report" rows="5"></textarea><br>
             
             <label>&nbsp;</label>
             <input type="submit" value="Add Report"><br>
-            
+          </fieldset>
         </form>
         <p><a href="index.php">View Trip Reports</a></p>
     </main>

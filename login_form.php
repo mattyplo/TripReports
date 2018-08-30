@@ -1,17 +1,18 @@
 
-    <main>
-        <h1>Login</h1>
-        <form action="login.php" method="post" id="login_form">
+    <main id="login_form">
         
+        <form class="group" action="login.php" method="post" id="login_form">
+        <h1>Login</h1>
+            
             <label>Username:</label>
             <input type="text" name='username'><br>
             
             <label>Password:</label>
             <input type="password" name="password"><br>
             
-            <label>&nbsp;</label>
-            <input type="submit" value="Login"><br>
-        
+            
+            <button type="submit">Login</button>
         </form>
         
+        <div id="offset_space"></div>
     </main>

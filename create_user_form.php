@@ -1,5 +1,5 @@
 
-    <main>
+    <main id="create_user">
         <h1>Create User</h1>
         <form action="create_user.php" method="post" id="create_user_form" class="group">
             
